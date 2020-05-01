@@ -1,0 +1,13 @@
+--- s3_old.py	2020-04-30 23:16:03.000000000 -0400
++++ s3.py	2020-04-30 23:15:38.000000000 -0400
+@@ -11,7 +11,9 @@
+ try:
+     import boto3
+     have_boto3 = True
+-    boto3.client('s3')  # https://github.com/conda/conda/issues/8993
++    #boto3.client('s3')  # https://github.com/conda/conda/issues/8993
++    session = boto3.Session(profile_name='default')
++    session.client('s3')
+ except ImportError:
+     try:
+         import boto
