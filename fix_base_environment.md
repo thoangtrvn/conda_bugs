@@ -77,4 +77,17 @@ conda uninstall awscli
 pip uninstall s3transfer
 pip uninstall urllib3
 ```
+# Fix corrupted package(s)
 
+You may have to remove, before reinstall certain packages, e.g. itermocil
+
+```
+importlib_metadata.PackageNotFoundError: No package metadata was found for itermocil
+```
+
+Solution:
+```
+brew remove itermocil 
+rp ~/anaconda3/bin/itermocil
+brew install install TomAnthony/brews/itermocil 
+```
